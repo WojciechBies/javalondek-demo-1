@@ -29,8 +29,9 @@ public class GenericFirstTaste {
         var anyVarAnimal = allAnimals.get(0); // ? extends Animal
         Animal anyAnimal = allAnimals.get(0); // Animal vs ? extends Animal
         Cat cat = anyAnimal instanceof Cat ? (Cat)anyAnimal : null;
-//        allAnimals.add(? extends Animal); // cannot add unknown typo object
+//        allAnimals.add(? extends Animal); // cannot add unknown type object
         Animal whoIsThis = new Dog();
+
 
 
         List<Animal> animals = new ArrayList<>();

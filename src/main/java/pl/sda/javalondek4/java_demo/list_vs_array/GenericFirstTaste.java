@@ -3,6 +3,7 @@ package pl.sda.javalondek4.java_demo.list_vs_array;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Stream;
 
 public class GenericFirstTaste {
@@ -25,7 +26,7 @@ public class GenericFirstTaste {
         onlyDogs.add(new Dog());
         List<Cat> onlyCats = new LinkedList<>();
 //        onlyAnimals = onlyDogs;
-        List<? extends Animal> allAnimals = onlyCats;
+        List<? extends Animal> allAnimals = onlyDogs;
         var anyVarAnimal = allAnimals.get(0); // ? extends Animal
         Animal anyAnimal = allAnimals.get(0); // Animal vs ? extends Animal
         Cat cat = anyAnimal instanceof Cat ? (Cat)anyAnimal : null;
@@ -54,7 +55,7 @@ public class GenericFirstTaste {
         showAnimalsJava4(animalList);
         showAnimalsJava4(catList);
         showAnimalsJava4(dogList);
-        Cat isThisReallyCat = catList.get(0);
+        Cat isThisReallyCat = catList.get(0); // look out!!!
 
 //        showOnlyAnimals(animalList);
 //        showOnlyAnimals(catList);
@@ -66,13 +67,21 @@ public class GenericFirstTaste {
 //        showTabAnimalsStreamVersion(dogList.toArray(new Dog[0]));
     }
 
+    // use for iteration and processing of objects
     public static void showAnimals(List<? extends Animal> animals) {
         System.out.println(animals);
         Animal animal = animals.get(0); // :) tbc...
 //        animals.add(0, new Animal());
 //        animals.add(0, new Dog());
 //        animals.add(0, new Cat());
+        List<String> names = List.of("Azor", "Burek", "Jack", "King");
+        Random random = new Random();
+        animals.stream()
+            .forEach(animal1 -> animal1.setName(names.get(random.nextInt(names.size()))));
 
+        animals.forEach(animal1 -> {
+            System.out.println("Animal name after change: " + animal1.getName());
+        });
     }
 
     public static void showOnlyAnimals(List<Animal> animals) {

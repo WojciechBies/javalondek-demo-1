@@ -3,6 +3,7 @@ package pl.sda.javalondek4.java_demo.list_vs_array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class ListVsArrayDemo {
 
@@ -78,7 +79,16 @@ public class ListVsArrayDemo {
     }
 
     public static void showTabAnimalsStreamVersion(Animal[] animals) {
-
+//        List<Animal> animalList = List.of(animals);
+//        animalList.stream()
+        Stream.of(animals)
+            .forEach((animal) -> {
+                if (animal != null) {
+                    animal.saySomething();
+                } else {
+                    System.out.println("reference is null!!!");
+                }
+            });
     }
 
     public static void playWithArrays(Object maybeArray) {

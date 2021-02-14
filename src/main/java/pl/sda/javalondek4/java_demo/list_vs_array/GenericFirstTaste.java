@@ -57,6 +57,14 @@ public class GenericFirstTaste {
         showAnimalsJava4(dogList);
         Cat isThisReallyCat = catList.get(0); // look out!!!
 
+        List<Object> strings = new LinkedList();
+//        strings.add((String)new Dog());
+        strings.add((String)"one");
+        String fromStrings = (String) strings.get(0);
+        List<String> strings2 = new LinkedList();
+        strings.add("one");
+        String fromStrings2 = strings2.get(0);
+
 //        showOnlyAnimals(animalList);
 //        showOnlyAnimals(catList);
 //        showOnlyAnimals(dogList);
@@ -65,6 +73,15 @@ public class GenericFirstTaste {
 //        showTabAnimalsStreamVersion(animalList.toArray(new Animal[0]));
 //        showTabAnimalsStreamVersion(catList.toArray(new Cat[0]));
 //        showTabAnimalsStreamVersion(dogList.toArray(new Dog[0]));
+    }
+
+    // add
+    // safe adding
+    // call with any supertype of Animal and Animal
+    public static void addElementToAnimalCollection(List<? super Animal> animals) {
+        animals.add(new Dog());
+        animals.add(new Cat());
+        animals.add(new Animal());
     }
 
     // use for iteration and processing of objects
@@ -83,7 +100,7 @@ public class GenericFirstTaste {
             System.out.println("Animal name after change: " + animal1.getName());
         });
     }
-
+    // Animal -> Mammal
     public static void showOnlyAnimals(List<Animal> animals) {
         System.out.println(animals);
         var animal = animals.get(0);
@@ -104,6 +121,9 @@ public class GenericFirstTaste {
         });
     }
 
+    // animals = Animals[]
+    // animals = Dog[]
+    // animals = Cat[]
     public static void showTabAnimalsStreamVersion(Animal[] animals) {
 //        List<Animal> animalList = List.of(animals);
 //        animalList.stream()

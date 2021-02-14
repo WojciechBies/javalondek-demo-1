@@ -1,6 +1,7 @@
 package pl.sda.javalondek4.java_demo.list_vs_array;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
@@ -55,7 +56,7 @@ public class GenericFirstTaste {
         showAnimalsJava4(animalList);
         showAnimalsJava4(catList);
         showAnimalsJava4(dogList);
-        Cat isThisReallyCat = catList.get(0); // look out!!!
+//        Cat isThisReallyCat = catList.get(0); // look out!!! there is something else in list than Cat:P
 
         List<Object> strings = new LinkedList();
 //        strings.add((String)new Dog());
@@ -73,11 +74,22 @@ public class GenericFirstTaste {
 //        showTabAnimalsStreamVersion(animalList.toArray(new Animal[0]));
 //        showTabAnimalsStreamVersion(catList.toArray(new Cat[0]));
 //        showTabAnimalsStreamVersion(dogList.toArray(new Dog[0]));
+
+        List<Object> emptyObjectList = Collections.emptyList();
+        addElementToAnimalCollection(animalList);
+//        addElementToAnimalCollection(catList);
+//        addElementToAnimalCollection(dogList);
+        addElementToAnimalCollection(emptyObjectList);
     }
 
     // add
     // safe adding
     // call with any supertype of Animal and Animal
+    // Animal animal = new Animal();
+    // Dog dog = new Dog();
+    // animal = dog;
+    // Cat cat = new Cat();
+    // dog = cat; // never ever
     public static void addElementToAnimalCollection(List<? super Animal> animals) {
         animals.add(new Dog());
         animals.add(new Cat());

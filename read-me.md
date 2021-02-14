@@ -21,6 +21,7 @@ Git - good practices
     * mergowanie
         * fast forward nie zawsze jest możliwy - działa tylko w przypadku gdy jeden branch może "dogonić" drugi
         * zawsze można wymusić commit mergujący
+        * pull'uj branch'e tylko przy czystym drzewie roboczym
 
 Git - przydatne komendy
 git status
@@ -32,3 +33,5 @@ git restore --staged file-name // zdejmij ze stage'a
 git checkout branch-name // przełącz się na branch-name
 git checkout -b branch-name // przełącz na nowo utworzony branch
 git log --graph // rysuje graf historii w konsoli
+git branch -a // pokaż wszystkie branch'e
+git fetch // aktualizacja metadanych o zdalnych repozytoriach

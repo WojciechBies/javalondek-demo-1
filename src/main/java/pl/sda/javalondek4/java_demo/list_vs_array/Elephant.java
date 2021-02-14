@@ -5,5 +5,5 @@ public class Elephant extends Animal {
     @Override
     void saySomething() {
         System.out.println("I'm elephant");
-    }
+       System.out.println("I'm an elephant");}
 }

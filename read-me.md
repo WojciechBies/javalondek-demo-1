@@ -21,6 +21,7 @@ Git - good practices
     * mergowanie
         * fast forward nie zawsze jest możliwy - działa tylko w przypadku gdy jeden branch może "dogonić" drugi
         * zawsze można wymusić commit mergujący
+        * pull'uj branch'e tylko przy czystym drzewie roboczym
 
 Git - przydatne komendy
 git status

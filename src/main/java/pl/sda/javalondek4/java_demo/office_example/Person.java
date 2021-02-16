@@ -7,12 +7,25 @@ public class Person {
     private int age;
     private String insuranceNumber;
 
-
     public Person(String name, String surname, int age, String insuranceNumber) {
         this.name = name;
         this.surname = surname;
         this.age = age;
         this.insuranceNumber = insuranceNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+            "name='" + name + '\'' +
+            ", surname='" + surname + '\'' +
+            ", age=" + age +
+            ", insuranceNumber='" + insuranceNumber + '\'' +
+            '}';
+    }
+
+    public String getInsuranceNumber() {
+        return insuranceNumber;
     }
 
     public String getName() {
@@ -27,17 +40,4 @@ public class Person {
         return age;
     }
 
-    public String getInsuranceNumber() {
-        return insuranceNumber;
-    }
-
-    @Override
-    public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", age=" + age +
-                ", insuranceNumber='" + insuranceNumber + '\'' +
-                '}';
-    }
 }

@@ -2,13 +2,12 @@ package pl.sda.javalondek4.java_demo.office_example;
 
 import java.util.UUID;
 
-public class SalesEmployee extends Employee{
+public class SalesEmployee extends Employee {
 
     private long salesAmountPerMonth;
 
-    public SalesEmployee(String name, String surname, int age, String insuranceNumber, UUID employeeId, long salary, long salesAmountPerMonth) {
+    public SalesEmployee(String name, String surname, int age, String insuranceNumber, UUID employeeId, long salary) {
         super(name, surname, age, insuranceNumber, employeeId, salary);
-        this.salesAmountPerMonth = salesAmountPerMonth;
     }
 
     public long getSalesAmountPerMonth() {
@@ -27,7 +26,7 @@ public class SalesEmployee extends Employee{
     @Override
     public String toString() {
         return "SalesEmployee{" +
-                "salesAmountPerMonth=" + salesAmountPerMonth +
-                "} " + super.toString();
+            "salesAmountPerMonth=" + salesAmountPerMonth +
+            "} " + super.toString();
     }
 }

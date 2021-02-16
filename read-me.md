@@ -50,3 +50,4 @@ git checkout -b branch-name // przełącz na nowo utworzony branch
 git log --graph // rysuje graf historii w konsoli
 git branch -a // pokaż wszystkie branch'e
 git fetch // aktualizacja metadanych o zdalnych repozytoriach
+git branch -d feature/animal-mp - usuwa zmergowany branch

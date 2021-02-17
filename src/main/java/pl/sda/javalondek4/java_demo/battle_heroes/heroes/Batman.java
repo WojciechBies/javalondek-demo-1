@@ -6,20 +6,19 @@ import pl.sda.javalondek4.java_demo.battle_heroes.Type;
 import pl.sda.javalondek4.java_demo.battle_heroes.items.hero_items.HeroItem;
 import pl.sda.javalondek4.java_demo.battle_heroes.moves.Kick;
 import pl.sda.javalondek4.java_demo.battle_heroes.moves.Punch;
+import pl.sda.javalondek4.java_demo.battle_heroes.special_moves.Batarang;
 import pl.sda.javalondek4.java_demo.battle_heroes.special_moves.JumpAttack;
-import pl.sda.javalondek4.java_demo.battle_heroes.special_moves.LaserEye;
 
-import java.util.Collections;
 import java.util.List;
 
-public class Superman extends Hero {
+public class Batman extends Hero {
 
     private final int cost = 10000;
 
-    public Superman() {
-        super(Name.SUPERMAN, 400, 600, Type.ATTACK, List.of(new Kick(50), new Punch(50)),
-                List.of(new LaserEye(200, 300, 20), new JumpAttack(100, 150, 10)),
-                List.of(Name.BATMAN.toString(), Name.WONDER_WOMAN.toString()));
+    public Batman() {
+        super(Name.BATMAN, 800, 300, Type.DEFENSE, List.of(new Punch(30), new Kick(30)),
+                List.of(new Batarang(90, 100, 10), new JumpAttack(70, 80, 8)),
+                List.of(Name.SUPERMAN.toString(), Name.WONDER_WOMAN.toString()));
     }
 
     @Override
@@ -38,7 +37,7 @@ public class Superman extends Hero {
 
     @Override
     public String toString() {
-        return "Superman{" +
+        return "Batman{" +
                 "cost=" + cost +
                 "} " + super.toString();
     }

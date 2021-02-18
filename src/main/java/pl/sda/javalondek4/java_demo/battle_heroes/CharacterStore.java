@@ -21,4 +21,11 @@ public class CharacterStore {
     public List<Character> getCharacterList() {
         return characterList;
     }
+
+    public void showAllCharacters() {
+        characterList.stream()
+                .forEach(character -> { System.out.println(character.getName();
+                    System.out.println(character.);})
+                so);
+    }
 }

@@ -1,10 +1,11 @@
 package pl.sda.javalondek4.java_demo.battle_heroes;
 
+import pl.sda.javalondek4.java_demo.battle_heroes.items.Item;
 import pl.sda.javalondek4.java_demo.battle_heroes.moves.Move;
 import pl.sda.javalondek4.java_demo.battle_heroes.special_moves.SpecialMove;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.UUID;
 
 public abstract class Character {
@@ -18,9 +19,12 @@ public abstract class Character {
     private final Type type;
     private final List<Move> moves;
     private final List<SpecialMove> specialMoves;
+    private final List<String> battleBonusCharacters;
+    private final List<Item> items;
+    private final int cost;
 
-    public Character(Name name, int health, int power, Type type,
-                     List<Move> moves, List<SpecialMove> specialMoves) {
+    public Character(Name name, int health, int power, Type type, List<Move> moves,
+                     List<SpecialMove> specialMoves, List<String> battleBonusCharacters, int cost) {
         this.id = UUID.randomUUID();
         this.level = 1;
         this.experience = 0;
@@ -30,6 +34,9 @@ public abstract class Character {
         this.type = type;
         this.moves = moves;
         this.specialMoves = specialMoves;
+        this.battleBonusCharacters = battleBonusCharacters;
+        this.items = new ArrayList<>();
+        this.cost = cost;
     }
 
     public abstract void attack(Character character);
@@ -86,31 +93,17 @@ public abstract class Character {
         this.power = power;
     }
 
-    @Override
-    public String toString() {
-        return "Character{" +
-                "id=" + id +
-                ", level=" + level +
-                ", experience=" + experience +
-                ", name='" + name + '\'' +
-                ", health=" + health +
-                ", power=" + power +
-                ", type=" + type +
-                ", moves=" + moves +
-                ", specialMoves=" + specialMoves +
-                '}';
+    public List<String> getBattleBonusCharacters() {
+        return battleBonusCharacters;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Character character = (Character) o;
-        return level == character.level && experience == character.experience && health == character.health && power == character.power && id.equals(character.id) && name == character.name && type == character.type && moves.equals(character.moves) && specialMoves.equals(character.specialMoves);
+    public List<Item> getItems() {
+        return items;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, level, experience, name, health, power, type, moves, specialMoves);
+    public int getCost() {
+        return cost;
     }
+
+
 }

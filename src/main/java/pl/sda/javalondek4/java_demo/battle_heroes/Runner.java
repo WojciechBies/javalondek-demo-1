@@ -1,7 +1,5 @@
 package pl.sda.javalondek4.java_demo.battle_heroes;
 
-import pl.sda.javalondek4.java_demo.battle_heroes.heroes.Superman;
-
 import java.util.Scanner;
 
 public class Runner {

@@ -1,18 +1,18 @@
 package pl.sda.javalondek4.java_demo.battle_heroes;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Player {
 
     private String nick;
     private int gold;
-    private final List<Character> characterList;
+    private final Set<Character> characterList;
 
     public Player(String nick) {
         this.nick = nick;
         this.gold = 10000;
-        this.characterList = new ArrayList<>();
+        this.characterList = new HashSet<>();
     }
 
     public String getNick() {
@@ -28,6 +28,10 @@ public class Player {
         return this.gold = this.gold + gold;
     }
 
+    public int subtractGold(int gold) {
+        return this.gold = this.gold - gold;
+    }
+
     public boolean addCharacter(Character character) {
         return addCharacter(character, this.characterList);
     }
@@ -37,11 +41,13 @@ public class Player {
         this.nick = nick;
     }
 
-    public List<Character> getCharacterList() {
+    public Set<Character> getCharacterList() {
         return characterList;
     }
 
-    private boolean addCharacter(Character character, List<? super Character> characterList) {
+    private boolean addCharacter(Character character, Set<? super Character> characterList) {
         return characterList.add(character);
     }
+
+
 }

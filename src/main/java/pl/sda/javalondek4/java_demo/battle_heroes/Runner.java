@@ -1,20 +1,23 @@
 package pl.sda.javalondek4.java_demo.battle_heroes;
 
-import java.util.Scanner;
-
 public class Runner {
 
     public static void main(String[] args) {
 
-        System.out.println("Welcome in Battle-Heroes");
-        System.out.println("Choose option: ");
-        System.out.println("1 - Create new player \n2 - Exit");
-        Scanner scanner = new Scanner(System.in);
-        String answer = scanner.nextLine();
+        CharacterStore characterStore = new CharacterStore();
+        Player player = new Player("Player");
 
-        while (answer.equals("1")) {
+        characterStore.showAllCharacters();
 
-        }
+        System.out.println(player.getGold());
+
+        characterStore.sellCharacter(player, Name.SUPERMAN);
+
+        System.out.println(player.getGold());
+        System.out.println(player.getCharacterList());
+
+
+
 
     }
 }
